@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="afcon_green">#052e09</color>
+    <color name="afcon_orange">#ff8400</color>
+
 </resources>
