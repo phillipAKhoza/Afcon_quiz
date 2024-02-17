@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:text="@string/correct_text"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -28,7 +28,7 @@
             android:layout_weight="1"
             android:text="@string/correct_number"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_weight="1"
             android:text="@string/empty_text"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -48,7 +48,7 @@
             android:layout_weight="1"
             android:text="@string/empty_number"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -58,7 +58,7 @@
             android:layout_weight="1"
             android:text="@string/wrong_text"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_weight="1"
             android:text="@string/wrong_number"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
