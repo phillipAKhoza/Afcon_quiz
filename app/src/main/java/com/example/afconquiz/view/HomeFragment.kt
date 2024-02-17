@@ -17,6 +17,10 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         fmBinding = FragmentHomeBinding.inflate(inflater,container,false)
+
+        fmBinding.btnBegin.setOnClickListener {
+
+        }
         // Inflate the layout for this fragment
         return fmBinding.root
     }
