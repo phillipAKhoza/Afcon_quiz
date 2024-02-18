@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+    val nav_version = "2.7.7"
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -48,4 +49,8 @@ dependencies {
 
 //    chart dependency
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    // navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 }
