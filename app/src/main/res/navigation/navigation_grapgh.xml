@@ -27,5 +27,18 @@
         android:id="@+id/resultFragment"
         android:name="com.example.afconquiz.view.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" />
+        tools:layout="@layout/fragment_result" >
+        <argument
+            android:name="correct"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="empty"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="wrong"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
