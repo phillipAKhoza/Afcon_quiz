@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import com.example.afconquiz.R
 import com.example.afconquiz.databinding.FragmentQuizBinding
 import com.example.afconquiz.databinding.FragmentResultBinding
+import com.github.mikephil.charting.data.BarEntry
 
 class ResultFragment : Fragment() {
     lateinit var fmResultBinding : FragmentResultBinding
-    var correctNum = 0
-    var wrongNum = 0
-    var emptyNum = 0
+    var correctNum = 0F
+    var wrongNum = 0F
+    var emptyNum = 0F
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,10 +27,18 @@ class ResultFragment : Fragment() {
         }
 
         arg?.let {
-            correctNum = it.correct
-            wrongNum= it.wrong
-            emptyNum= it.empty
+            correctNum = it.correct.toFloat()
+            wrongNum= it.wrong.toFloat()
+            emptyNum= it.empty.toFloat()
         }
+
+        val barCorrectList = ArrayList<BarEntry>()
+        val barWrongList = ArrayList<BarEntry>()
+        val barEmptyList = ArrayList<BarEntry>()
+
+        barCorrectList.add(BarEntry(0F,correctNum))
+        barWrongList.add(BarEntry(1F,wrongNum))
+        barEmptyList.add(BarEntry(2F,emptyNum))
 
         fmResultBinding.btnNewQuiz.setOnClickListener {  }
         fmResultBinding.btnExit.setOnClickListener {  }
