@@ -21,6 +21,7 @@ class QuizFragment : Fragment() {
     var emptyNumber = 0
     var questionNumber = 0
 
+    lateinit var correctFlag : FlagsModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,7 +54,7 @@ class QuizFragment : Fragment() {
         fmQuizBinding.tvQuestion.text = resources.getString(R.string.question_number)
             .plus(" ").plus(questionNumber+1)
 
-
+        correctFlag = flagList[questionNumber]
     }
 
 }
