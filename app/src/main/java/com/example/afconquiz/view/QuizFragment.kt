@@ -77,7 +77,12 @@ class QuizFragment : Fragment() {
                     wrong = wrongNumber
                     empty = emptyNumber
                 }
-                this.findNavController().navigate(direction)
+                this.findNavController().apply {
+                    navigate(direction)
+                    popBackStack(R.id.resultFragment,false)
+                }
+
+
             }else{
                 showData()
 
