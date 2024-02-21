@@ -9,5 +9,11 @@ class FlagsDao {
         val recordList : ArrayList<FlagsModel>
         val database : SQLiteDatabase = helper.writableDatabase
         val cursor : Cursor = database.rawQuery("SELECT * FROM flags ORDER BY RANDOM() LIMIT 10", null)
+
+        val idIndex = cursor.getColumnIndex("flag_id")
+        val countryNameIndex = cursor.getColumnIndex("country_name")
+        val flagNameIndex = cursor.getColumnIndex("flag_name")
+
+
     }
 }
