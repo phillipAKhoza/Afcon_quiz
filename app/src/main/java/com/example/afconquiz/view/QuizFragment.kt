@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import com.example.afconquiz.R
 import com.example.afconquiz.database.DatabaseCopyHelper
 import com.example.afconquiz.database.FlagsDao
@@ -28,6 +29,8 @@ class QuizFragment : Fragment() {
 
     var wrongFlag = ArrayList<FlagsModel>()
     val dao = FlagsDao()
+
+    var isAnswerSelected : Boolean =false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,8 +64,26 @@ class QuizFragment : Fragment() {
         }
         fmQuizBinding.btnNext.setOnClickListener {
             questionNumber++
-            showData()
-            restButtons()
+
+            if(questionNumber>9){
+
+                if (!isAnswerSelected){
+                    emptyNumber++
+                }
+                Toast.makeText(requireActivity(),"Quiz is done", Toast.LENGTH_LONG).show()
+            }else{
+                showData()
+
+                if (!isAnswerSelected){
+                    emptyNumber++
+                    fmQuizBinding.tvEmpty.text = emptyNumber.toString()
+                }else{
+                    restButtons()
+                }
+
+            }
+            isAnswerSelected=false
+
         }
 
         return fmQuizBinding.root
@@ -127,6 +148,8 @@ class QuizFragment : Fragment() {
         fmQuizBinding.buttonB.isClickable = false
         fmQuizBinding.buttonC.isClickable = false
         fmQuizBinding.buttonD.isClickable = false
+
+        isAnswerSelected = true
 
     }
 
