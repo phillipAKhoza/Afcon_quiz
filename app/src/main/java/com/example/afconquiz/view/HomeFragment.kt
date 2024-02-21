@@ -19,7 +19,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         fmBinding = FragmentHomeBinding.inflate(inflater,container,false)
-
+        createAndOpenDB()
         fmBinding.btnBegin.setOnClickListener {
 
         }
