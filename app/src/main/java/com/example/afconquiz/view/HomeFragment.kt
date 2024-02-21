@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.afconquiz.R
 import com.example.afconquiz.database.DatabaseCopyHelper
 import com.example.afconquiz.databinding.FragmentHomeBinding
@@ -22,7 +23,8 @@ class HomeFragment : Fragment() {
         createAndOpenDB()
         fmBinding.btnBegin.setOnClickListener {
 
-
+        val direction = HomeFragmentDirections.actionHomeFragmentToQuizFragment()
+            this.findNavController().navigate(direction)
 
         }
         // Inflate the layout for this fragment
