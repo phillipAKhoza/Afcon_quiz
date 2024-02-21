@@ -20,6 +20,8 @@ class HomeFragment : Fragment() {
 
         fmBinding.btnBegin.setOnClickListener {
 
+
+
         }
         // Inflate the layout for this fragment
         return fmBinding.root
