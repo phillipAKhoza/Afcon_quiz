@@ -1,5 +1,6 @@
 package com.example.afconquiz.view
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import com.example.afconquiz.R
 import com.example.afconquiz.databinding.FragmentQuizBinding
 import com.example.afconquiz.databinding.FragmentResultBinding
+import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 
@@ -41,9 +43,25 @@ class ResultFragment : Fragment() {
         barWrongList.add(BarEntry(1F,wrongNum))
         barEmptyList.add(BarEntry(2F,emptyNum))
 
-        val barCorrectDataSet = BarDataSet(barCorrectList,"Correct Answers")
-        val barWrongDataSet = BarDataSet(barCorrectList,"Wrong Answers")
-        val barEmptyDataSet = BarDataSet(barCorrectList,"Empty Answers")
+        val barCorrectDataSet = BarDataSet(barCorrectList,"Correct Answers").apply {
+            color = Color.GREEN
+            valueTextSize= 24F
+            setValueTextColors(arrayListOf(Color.BLACK))
+        }
+        val barWrongDataSet = BarDataSet(barCorrectList,"Wrong Answers").apply {
+            color = Color.RED
+            valueTextSize= 24F
+            setValueTextColors(arrayListOf(Color.WHITE))
+        }
+        val barEmptyDataSet = BarDataSet(barCorrectList,"Empty Answers").apply {
+            color = Color.YELLOW
+            valueTextSize= 24F
+            setValueTextColors(arrayListOf(Color.WHITE))
+        }
+
+        val barData = BarData(barCorrectDataSet,barWrongDataSet,barEmptyDataSet)
+
+        fmResultBinding.barChart.data = barData
 
         fmResultBinding.btnNewQuiz.setOnClickListener {  }
         fmResultBinding.btnExit.setOnClickListener {  }
