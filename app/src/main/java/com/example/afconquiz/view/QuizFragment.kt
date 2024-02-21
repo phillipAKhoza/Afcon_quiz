@@ -37,9 +37,7 @@ class QuizFragment : Fragment() {
         flagList = dao.getTenRandomQuestion(DatabaseCopyHelper(requireActivity()))
 
         for (flag in flagList){
-            Log.d("flags", flag.id.toString())
             Log.d("flags", flag.flagName)
-            Log.d("flags", flag.countryName)
             Log.d("flags", "************************")
         }
 
@@ -63,9 +61,7 @@ class QuizFragment : Fragment() {
 
         correctFlag = flagList[questionNumber]
 
-        fmQuizBinding.igmFlag.setImageResource(
-            resources.getIdentifier(correctFlag.flagName,"drawable",requireActivity().packageName)
-        )
+        fmQuizBinding.igmFlag.setImageResource(resources.getIdentifier(correctFlag.countryName,"drawable",requireActivity().packageName))
 
         wrongFlag = dao.getThreeRandomQuestion(DatabaseCopyHelper(requireActivity()), correctFlag.id)
 
