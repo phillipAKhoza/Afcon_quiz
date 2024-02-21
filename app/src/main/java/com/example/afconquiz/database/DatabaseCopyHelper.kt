@@ -1,10 +1,11 @@
-package com.example.afconquiz
+package com.example.afconquiz.database
 
 import android.content.Context
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
+import android.widget.Toast
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
