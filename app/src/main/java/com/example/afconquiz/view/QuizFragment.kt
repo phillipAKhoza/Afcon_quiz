@@ -1,5 +1,6 @@
 package com.example.afconquiz.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -22,6 +23,8 @@ class QuizFragment : Fragment() {
     var questionNumber = 0
 
     lateinit var correctFlag : FlagsModel
+
+    var wrongFlag = ArrayList<FlagsModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +53,7 @@ class QuizFragment : Fragment() {
         return fmQuizBinding.root
     }
 
+    @SuppressLint("DiscouragedApi")
     private  fun showData(){
         fmQuizBinding.tvQuestion.text = resources.getString(R.string.question_number)
             .plus(" ").plus(questionNumber+1)
