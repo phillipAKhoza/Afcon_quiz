@@ -55,6 +55,8 @@ class QuizFragment : Fragment() {
             .plus(" ").plus(questionNumber+1)
 
         correctFlag = flagList[questionNumber]
+
+        fmQuizBinding.igmFlag.setImageResource(resources.getIdentifier(correctFlag.flagName,"drawable",requireActivity().packageName))
     }
 
 }
