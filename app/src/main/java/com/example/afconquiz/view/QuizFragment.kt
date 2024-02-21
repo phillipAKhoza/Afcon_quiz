@@ -1,6 +1,7 @@
 package com.example.afconquiz.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,12 @@ class QuizFragment : Fragment() {
         val dao = FlagsDao()
         flagList = dao.getTenRandomQuestion(DatabaseCopyHelper(requireActivity()))
 
+        for (flag in flagList){
+            Log.d("flags", flag.id.toString())
+            Log.d("flags", flag.flagName)
+            Log.d("flags", flag.countryName)
+            Log.d("flags", "************************")
+        }
         fmQuizBinding.buttonA.setOnClickListener {  }
         fmQuizBinding.buttonB.setOnClickListener {  }
         fmQuizBinding.buttonC.setOnClickListener {  }
