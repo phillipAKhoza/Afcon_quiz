@@ -45,11 +45,20 @@ class QuizFragment : Fragment() {
 
         showData()
         fmQuizBinding.buttonA.setOnClickListener {
+            answerControl(fmQuizBinding.buttonA)
+        }
+        fmQuizBinding.buttonB.setOnClickListener {
+            answerControl(fmQuizBinding.buttonB)
 
         }
-        fmQuizBinding.buttonB.setOnClickListener {  }
-        fmQuizBinding.buttonC.setOnClickListener {  }
-        fmQuizBinding.buttonD.setOnClickListener {  }
+        fmQuizBinding.buttonC.setOnClickListener {
+            answerControl(fmQuizBinding.buttonC)
+
+        }
+        fmQuizBinding.buttonD.setOnClickListener {
+            answerControl(fmQuizBinding.buttonD)
+
+        }
         fmQuizBinding.btnNext.setOnClickListener {
             questionNumber++
             showData()
