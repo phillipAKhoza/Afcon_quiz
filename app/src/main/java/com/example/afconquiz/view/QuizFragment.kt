@@ -62,6 +62,7 @@ class QuizFragment : Fragment() {
         fmQuizBinding.btnNext.setOnClickListener {
             questionNumber++
             showData()
+            restButtons()
         }
 
         return fmQuizBinding.root
@@ -127,6 +128,29 @@ class QuizFragment : Fragment() {
         fmQuizBinding.buttonC.isClickable = false
         fmQuizBinding.buttonD.isClickable = false
 
+    }
+
+    private  fun restButtons(){
+        fmQuizBinding.buttonA.apply {
+            setBackgroundColor(Color.WHITE)
+            setTextColor(resources.getColor(R.color.afcon_orange,requireActivity().theme))
+            isClickable = true
+        }
+        fmQuizBinding.buttonB.apply {
+            setBackgroundColor(Color.WHITE)
+            setTextColor(resources.getColor(R.color.afcon_orange,requireActivity().theme))
+            isClickable = true
+        }
+        fmQuizBinding.buttonC.apply {
+            setBackgroundColor(Color.WHITE)
+            setTextColor(resources.getColor(R.color.afcon_orange,requireActivity().theme))
+            isClickable = true
+        }
+        fmQuizBinding.buttonD.apply {
+            setBackgroundColor(Color.WHITE)
+            setTextColor(resources.getColor(R.color.afcon_orange,requireActivity().theme))
+            isClickable = true
+        }
     }
 
 }
