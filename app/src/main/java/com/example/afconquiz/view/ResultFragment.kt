@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.afconquiz.R
 import com.example.afconquiz.databinding.FragmentQuizBinding
 import com.example.afconquiz.databinding.FragmentResultBinding
+import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 
 class ResultFragment : Fragment() {
@@ -39,6 +40,10 @@ class ResultFragment : Fragment() {
         barCorrectList.add(BarEntry(0F,correctNum))
         barWrongList.add(BarEntry(1F,wrongNum))
         barEmptyList.add(BarEntry(2F,emptyNum))
+
+        val barCorrectDataSet = BarDataSet(barCorrectList,"Correct Answers")
+        val barWrongDataSet = BarDataSet(barCorrectList,"Wrong Answers")
+        val barEmptyDataSet = BarDataSet(barCorrectList,"Empty Answers")
 
         fmResultBinding.btnNewQuiz.setOnClickListener {  }
         fmResultBinding.btnExit.setOnClickListener {  }
