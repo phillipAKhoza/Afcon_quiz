@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.afconquiz.R
 import com.example.afconquiz.databinding.FragmentHomeBinding
+import java.lang.Exception
 
 class HomeFragment : Fragment() {
     lateinit var fmBinding : FragmentHomeBinding
@@ -23,6 +24,14 @@ class HomeFragment : Fragment() {
         }
         // Inflate the layout for this fragment
         return fmBinding.root
+    }
+
+    private fun createAndOpenDB(){
+        try {
+
+        }catch (error : Exception){
+
+        }
     }
 
 }
