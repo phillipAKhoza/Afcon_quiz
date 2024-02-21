@@ -25,7 +25,7 @@ class QuizFragment : Fragment() {
     lateinit var correctFlag : FlagsModel
 
     var wrongFlag = ArrayList<FlagsModel>()
-
+    val dao = FlagsDao()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,7 +33,7 @@ class QuizFragment : Fragment() {
         // Inflate the layout for this fragment
         fmQuizBinding = FragmentQuizBinding.inflate(inflater,container,false)
 
-        val dao = FlagsDao()
+
         flagList = dao.getTenRandomQuestion(DatabaseCopyHelper(requireActivity()))
 
         for (flag in flagList){
@@ -60,7 +60,11 @@ class QuizFragment : Fragment() {
 
         correctFlag = flagList[questionNumber]
 
-        fmQuizBinding.igmFlag.setImageResource(resources.getIdentifier(correctFlag.flagName,"drawable",requireActivity().packageName))
+        fmQuizBinding.igmFlag.setImageResource(
+            resources.getIdentifier(correctFlag.flagName,"drawable",requireActivity().packageName)
+        )
+
+        wrongFlag = dao.getThreeRandomQuestion(DatabaseCopyHelper(requireActivity()), correctFlag.id)
     }
 
 }
