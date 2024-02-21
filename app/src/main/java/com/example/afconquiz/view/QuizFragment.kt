@@ -65,6 +65,27 @@ class QuizFragment : Fragment() {
         )
 
         wrongFlag = dao.getThreeRandomQuestion(DatabaseCopyHelper(requireActivity()), correctFlag.id)
+
+        val mixOptions = HashSet<FlagsModel>()
+        mixOptions.clear()
+
+        mixOptions.add(correctFlag)
+        mixOptions.add(wrongFlag[0])
+        mixOptions.add(wrongFlag[1])
+        mixOptions.add(wrongFlag[2])
+
+        val options = ArrayList<FlagsModel>()
+        options.clear()
+
+        for(flag in mixOptions){
+            options.add(flag)
+        }
+
+        fmQuizBinding.buttonA.text = options[0].countryName
+        fmQuizBinding.buttonB.text = options[1].countryName
+        fmQuizBinding.buttonC.text = options[2].countryName
+        fmQuizBinding.buttonD.text = options[3].countryName
+
     }
 
 }
