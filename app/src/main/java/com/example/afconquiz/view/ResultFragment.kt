@@ -64,7 +64,11 @@ class ResultFragment : Fragment() {
         fmResultBinding.barChart.data = barData
 
         fmResultBinding.btnNewQuiz.setOnClickListener {  }
-        fmResultBinding.btnExit.setOnClickListener {  }
+        fmResultBinding.btnExit.setOnClickListener {
+
+            requireActivity().finish()
+
+        }
         return fmResultBinding.root
     }
 
