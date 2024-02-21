@@ -16,6 +16,10 @@ import com.example.afconquiz.model.FlagsModel
 class QuizFragment : Fragment() {
     lateinit var fmQuizBinding: FragmentQuizBinding
     var flagList = ArrayList<FlagsModel>()
+    var correctNumber = 0
+    var wrongNumber = 0
+    var emptyNumber = 0
+    var questionNumber = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +43,10 @@ class QuizFragment : Fragment() {
         fmQuizBinding.btnNext.setOnClickListener {  }
 
         return fmQuizBinding.root
+    }
+
+    private  fun showData(){
+
     }
 
 }
