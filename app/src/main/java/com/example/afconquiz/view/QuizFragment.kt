@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.afconquiz.R
 import com.example.afconquiz.database.DatabaseCopyHelper
 import com.example.afconquiz.database.FlagsDao
@@ -70,7 +71,13 @@ class QuizFragment : Fragment() {
                 if (!isAnswerSelected){
                     emptyNumber++
                 }
-                Toast.makeText(requireActivity(),"Quiz is done", Toast.LENGTH_LONG).show()
+//                Toast.makeText(requireActivity(),"Quiz is done", Toast.LENGTH_LONG).show()
+                val direction = QuizFragmentDirections.actionQuizFragmentToResultFragment().apply {
+                    correct = correctNumber
+                    wrong = wrongNumber
+                    empty = emptyNumber
+                }
+                this.findNavController().navigate(direction)
             }else{
                 showData()
 
