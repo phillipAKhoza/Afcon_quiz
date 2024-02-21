@@ -48,15 +48,15 @@ class ResultFragment : Fragment() {
             valueTextSize= 24F
             setValueTextColors(arrayListOf(Color.BLACK))
         }
-        val barWrongDataSet = BarDataSet(barCorrectList,"Wrong Answers").apply {
+        val barWrongDataSet = BarDataSet(barWrongList,"Wrong Answers").apply {
             color = Color.RED
             valueTextSize= 24F
-            setValueTextColors(arrayListOf(Color.WHITE))
+            setValueTextColors(arrayListOf(Color.BLACK))
         }
-        val barEmptyDataSet = BarDataSet(barCorrectList,"Empty Answers").apply {
+        val barEmptyDataSet = BarDataSet(barEmptyList,"Empty Answers").apply {
             color = Color.YELLOW
             valueTextSize= 24F
-            setValueTextColors(arrayListOf(Color.WHITE))
+            setValueTextColors(arrayListOf(Color.BLACK))
         }
 
         val barData = BarData(barCorrectDataSet,barWrongDataSet,barEmptyDataSet)
