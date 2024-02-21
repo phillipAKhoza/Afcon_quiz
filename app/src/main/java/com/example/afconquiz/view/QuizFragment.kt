@@ -48,7 +48,10 @@ class QuizFragment : Fragment() {
         fmQuizBinding.buttonB.setOnClickListener {  }
         fmQuizBinding.buttonC.setOnClickListener {  }
         fmQuizBinding.buttonD.setOnClickListener {  }
-        fmQuizBinding.btnNext.setOnClickListener {  }
+        fmQuizBinding.btnNext.setOnClickListener {
+            questionNumber++
+            showData()
+        }
 
         return fmQuizBinding.root
     }
