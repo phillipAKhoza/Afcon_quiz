@@ -67,6 +67,7 @@ class ResultFragment : Fragment() {
         fmResultBinding.btnExit.setOnClickListener {
 
             requireActivity().finish()
+//            finishAffinity
 
         }
         return fmResultBinding.root
