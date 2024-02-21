@@ -20,6 +20,8 @@ class QuizFragment : Fragment() {
     var wrongNumber = 0
     var emptyNumber = 0
     var questionNumber = 0
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,6 +38,8 @@ class QuizFragment : Fragment() {
             Log.d("flags", flag.countryName)
             Log.d("flags", "************************")
         }
+
+        showData()
         fmQuizBinding.buttonA.setOnClickListener {  }
         fmQuizBinding.buttonB.setOnClickListener {  }
         fmQuizBinding.buttonC.setOnClickListener {  }
@@ -46,6 +50,9 @@ class QuizFragment : Fragment() {
     }
 
     private  fun showData(){
+        fmQuizBinding.tvQuestion.text = resources.getString(R.string.question_number)
+            .plus(" ").plus(questionNumber+1)
+
 
     }
 
