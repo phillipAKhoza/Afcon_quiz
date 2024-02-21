@@ -1,4 +1,4 @@
-package com.techmania.flagquizwithsqlitedemo
+package com.example.afconquiz
 
 import android.content.Context
 import android.database.SQLException
