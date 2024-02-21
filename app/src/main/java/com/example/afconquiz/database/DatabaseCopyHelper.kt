@@ -1,4 +1,4 @@
-package com.example.afconquiz
+package com.example.afconquiz.database
 
 import android.content.Context
 import android.database.SQLException
