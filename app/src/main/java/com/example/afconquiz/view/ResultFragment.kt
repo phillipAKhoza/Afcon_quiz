@@ -11,12 +11,25 @@ import com.example.afconquiz.databinding.FragmentResultBinding
 
 class ResultFragment : Fragment() {
     lateinit var fmResultBinding : FragmentResultBinding
+    var correctNum = 0
+    var wrongNum = 0
+    var emptyNum = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         fmResultBinding = FragmentResultBinding.inflate(inflater,container,false)
+
+        val arg = arguments?.let {
+            ResultFragmentArgs.fromBundle(it)
+        }
+
+        arg?.let {
+            correctNum = it.correct
+            wrongNum= it.wrong
+            emptyNum= it.empty
+        }
 
         fmResultBinding.btnNewQuiz.setOnClickListener {  }
         fmResultBinding.btnExit.setOnClickListener {  }
