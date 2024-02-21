@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.afconquiz.R
 import com.example.afconquiz.databinding.FragmentQuizBinding
 import com.example.afconquiz.databinding.FragmentResultBinding
@@ -63,7 +64,9 @@ class ResultFragment : Fragment() {
 
         fmResultBinding.barChart.data = barData
 
-        fmResultBinding.btnNewQuiz.setOnClickListener {  }
+        fmResultBinding.btnNewQuiz.setOnClickListener {
+            this.findNavController().popBackStack(R.id.homeFragment,false)
+        }
         fmResultBinding.btnExit.setOnClickListener {
 
             requireActivity().finish()
